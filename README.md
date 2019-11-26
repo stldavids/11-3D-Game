@@ -1,1 +1,1 @@
-# 11-3D-Game
+Very simple platformer.  Character can move forward, right, left, back, and jump.  Player can turn using mouse.  Key Controls are WASD and Space.
