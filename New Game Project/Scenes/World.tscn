@@ -1,25 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Hole.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Furniture/Sink.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Ground/Ground03_col.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Ground/Ground03_nrm.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/Ground/Ground03_rgh.jpg" type="Texture" id=4]
+[ext_resource path="res://Scripts/Hole.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Furniture/Sink.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 4 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
 
 [node name="World" type="Spatial"]
 script = ExtResource( 1 )
+
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [node name="Ground" type="CSGBox" parent="."]
 use_collision = true
 width = 20.0
 height = 0.2
 depth = 20.0
+material = SubResource( 1 )
 
 [node name="Hole" type="CSGCylinder" parent="Ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
 operation = 2
-radius = 0.1
+radius = 0.5
 sides = 40
-script = ExtResource( 2 )
+script = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="Ground/Hole"]
 
@@ -28,23 +43,38 @@ transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0
 
 [node name="Stuff" type="Spatial" parent="."]
 
-[node name="Chair" parent="Stuff" instance=ExtResource( 3 )]
+[node name="Chair" parent="Stuff" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3304, 0.246724, 0 )
 
-[node name="Sink" parent="Stuff" instance=ExtResource( 4 )]
+[node name="Sink" parent="Stuff" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81754, 0.300927, 0 )
 
 [node name="HUD" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="HUD"]
-margin_right = 172.0
+margin_right = 93.0
 margin_bottom = 40.0
 color = Color( 0, 0, 0, 0.25098 )
 
 [node name="Score" type="Label" parent="HUD"]
 margin_left = 6.0
 margin_top = 11.0
-margin_right = 168.0
+margin_right = 84.0
 margin_bottom = 34.0
 text = "0"
 align = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HUD"]
+margin_left = 930.0
+margin_right = 1023.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="Timer" type="Label" parent="HUD"]
+margin_left = 936.0
+margin_top = 11.0
+margin_right = 1014.0
+margin_bottom = 34.0
+text = "0"
+align = 2
+[connection signal="timeout" from="Countdown" to="." method="_on_Countdown_timeout"]
