@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Hole.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 1 )
@@ -21,3 +22,8 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0, 5, 5 )
+
+[node name="Stuff" type="Spatial" parent="."]
+
+[node name="Chair" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3304, 0, 0 )
