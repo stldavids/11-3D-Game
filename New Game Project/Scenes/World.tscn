@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Hole.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Furniture/Sink.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 1 )
@@ -20,10 +21,30 @@ radius = 0.1
 sides = 40
 script = ExtResource( 2 )
 
+[node name="Tween" type="Tween" parent="Ground/Hole"]
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0, 5, 5 )
 
 [node name="Stuff" type="Spatial" parent="."]
 
-[node name="Chair" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3304, 0, 0 )
+[node name="Chair" parent="Stuff" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3304, 0.246724, 0 )
+
+[node name="Sink" parent="Stuff" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81754, 0.300927, 0 )
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+margin_right = 172.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="Score" type="Label" parent="HUD"]
+margin_left = 6.0
+margin_top = 11.0
+margin_right = 168.0
+margin_bottom = 34.0
+text = "0"
+align = 2
