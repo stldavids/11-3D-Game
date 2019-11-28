@@ -1,13 +1,11 @@
 extends CSGCylinder
 
-var max_size = 1.5
+var max_size = 2
 var min_size = 0.1
 var change_size = 0.1
-var movement = 0.02
+var movement = 0.04
 
-func _ready():
-	pass
-	
+
 func _physics_process(delta):
 	if Input.is_action_pressed("increase_size"):
 		increase_size(change_size)

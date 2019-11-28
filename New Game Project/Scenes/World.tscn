@@ -1,12 +1,47 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ground/Ground03_col.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Ground/Ground03_nrm.jpg" type="Texture" id=3]
 [ext_resource path="res://Assets/Ground/Ground03_rgh.jpg" type="Texture" id=4]
 [ext_resource path="res://Scripts/Hole.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Furniture/Sink.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Furniture/Sink.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Furniture/Chair.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Furniture/bathroomCabinet.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Furniture/bathroomCabinetDrawer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Furniture/bathroomMirror.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Furniture/bathroomSink.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Furniture/bathroomSinkSquare.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Furniture/bear.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Furniture/bedBunk.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Furniture/bedDouble.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Furniture/bedSingle.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Furniture/bench.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Furniture/benchCushion.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Furniture/benchCushionLow.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Furniture/bookcaseClosed.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Furniture/bookcaseClosedDoors.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Furniture/bookcaseClosedWide.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Furniture/bookcaseOpen.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/Furniture/bookcaseOpenLow.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Furniture/books.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Assets/Furniture/cabinetBed.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/Furniture/cabinetBedDrawer.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Assets/Furniture/cabinetBedDrawerTable.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Assets/Furniture/cabinetTelevision.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Assets/Furniture/bathtub.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/Furniture/cabinetTelevisionDoors.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Assets/Furniture/cardboardBoxClosed.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Assets/Furniture/cardboardBoxOpen.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/Furniture/ceilingFan.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Assets/Furniture/chairCushion.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Assets/Furniture/chairDesk.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Assets/Furniture/chairModernCushion.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Assets/Furniture/chairModernFrameCustom.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Assets/Furniture/chairRounded.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Assets/Furniture/coatRack.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Assets/Furniture/coatRackStanding.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Assets/Furniture/computerScreen.tscn" type="PackedScene" id=42]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -19,7 +54,6 @@ normal_texture = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="Countdown" type="Timer" parent="."]
-wait_time = 0.1
 autostart = true
 
 [node name="Ground" type="CSGBox" parent="."]
@@ -43,11 +77,116 @@ transform = Transform( 1, 0, 0, 0, 0.573576, 0.819152, 0, -0.819152, 0.573576, 0
 
 [node name="Stuff" type="Spatial" parent="."]
 
-[node name="Chair" parent="Stuff" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3304, 0.246724, 0 )
+[node name="Sink" parent="Stuff" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17337, 0.494169, 0 )
 
-[node name="Sink" parent="Stuff" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81754, 0.300927, 0 )
+[node name="Chair" parent="Stuff" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14437, 0.464724, 0 )
+
+[node name="bathroomCabinet" parent="Stuff" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24908, 1.34547, 0 )
+
+[node name="bathroomCabinetDrawer" parent="Stuff" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44151, 1.11441, 0 )
+
+[node name="bathroomMirror" parent="Stuff" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9028, 1.35025, 0 )
+
+[node name="bathroomSink" parent="Stuff" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43391, 1.43267, 0 )
+
+[node name="bathroomSinkSquare" parent="Stuff" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07742, 1.38403, 0.597257 )
+
+[node name="bear" parent="Stuff" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23467, 1.10021, -2.3101 )
+
+[node name="bedBunk" parent="Stuff" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9424, -3.21132 )
+
+[node name="bedDouble" parent="Stuff" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.709611, 2.63283, -1.9661 )
+
+[node name="bedSingle" parent="Stuff" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49819, 1.11274, 0 )
+
+[node name="bench" parent="Stuff" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97142, 1.31242 )
+
+[node name="benchCushion" parent="Stuff" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05429, 2.03127, 1.04686 )
+
+[node name="benchCushionLow" parent="Stuff" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11684, 1.09702, 1.57993 )
+
+[node name="bookcaseClosed" parent="Stuff" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78877, 1.16027, 1.39052 )
+
+[node name="bookcaseClosedDoors" parent="Stuff" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36686, 2.29697, -3.013 )
+
+[node name="bookcaseClosedWide" parent="Stuff" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68118, 1.5771, 1.53905 )
+
+[node name="bookcaseOpen" parent="Stuff" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38295, 1.18658, 1.06419 )
+
+[node name="bookcaseOpenLow" parent="Stuff" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07883, 2.46572, -1.69675 )
+
+[node name="books" parent="Stuff" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20116, 1.33058, -0.894116 )
+
+[node name="cabinetBed" parent="Stuff" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52573, 1.70367, -1.10762 )
+
+[node name="cabinetBedDrawer" parent="Stuff" instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62512, 1.52016, 2.93235 )
+
+[node name="cabinetBedDrawerTable" parent="Stuff" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59003, 0.905997, 2.74452 )
+
+[node name="cabinetTelevision" parent="Stuff" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67282, 0.665149, 2.71824 )
+
+[node name="bathtub" parent="Stuff" instance=ExtResource( 30 )]
+
+[node name="cabinetTelevisionDoors" parent="Stuff" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -2 )
+
+[node name="cardboardBoxClosed" parent="Stuff" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 4 )
+
+[node name="cardboardBoxOpen" parent="Stuff" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4 )
+
+[node name="ceilingFan" parent="Stuff" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 2 )
+
+[node name="chairCushion" parent="Stuff" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
+
+[node name="chairDesk" parent="Stuff" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0 )
+
+[node name="chairModernCushion" parent="Stuff" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2 )
+
+[node name="chairModernFrameCustom" parent="Stuff" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 4 )
+
+[node name="chairRounded" parent="Stuff" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3 )
+can_sleep = false
+
+[node name="coatRack" parent="Stuff" instance=ExtResource( 40 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 3 )
+
+[node name="coatRackStanding" parent="Stuff" instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+
+[node name="computerScreen" parent="Stuff" instance=ExtResource( 42 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11754, 2.46239 )
 
 [node name="HUD" type="Node2D" parent="."]
 
